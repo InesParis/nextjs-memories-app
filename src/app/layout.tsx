@@ -1,12 +1,14 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import type { ReactNode, ReactElement } from "react";
 
-const roboto = Roboto({ weight: ["400", "500"], subsets: ["latin"] });
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}): ReactElement {
   return (
     <html lang="en">
-      <body className={`${roboto.className} bg-black bg-cover bg-center text-white`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
