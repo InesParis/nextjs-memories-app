@@ -4,7 +4,7 @@ import Message from "./message";
 import { eleganceClient } from "@/services/eleganceClient";
 const Chat = () => {
   const [value, setValue] = useState<string>("");
-  const [message, setMessage] = useState<Array<string | undefined>>([]);
+  const [messages, setMessages] = useState<Array<string | undefined>>([]);
   const tableName = "memories";
 
   const chatCompletion = eleganceClient.hooks.useSearchChatCompletion();
@@ -19,7 +19,7 @@ const Chat = () => {
         minSimilarity: 0.6,
         maxContextLength: 3000,
       });
-      setMessage((prevMessages) => [
+      setMessages((prevMessages) => [
         ...prevMessages,
         value,
         completion?.context,
@@ -31,7 +31,7 @@ const Chat = () => {
   return (
     <>
       <div className="messages-container">
-        {message.map((message, index) => (
+        {messages.map((message, index) => (
           <Message key={index} message={message} />
         ))}
       </div>
@@ -45,7 +45,9 @@ const Chat = () => {
           className="send"
           onClick={handleClick}
           disabled={!value || chatCompletion.isLoading}
-        ></button>
+        >
+          ➤
+        </button>
       </div>
     </>
   );

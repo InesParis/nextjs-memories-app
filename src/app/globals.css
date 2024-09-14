@@ -26,7 +26,7 @@ body {
   overflow: hidden;
 }
 
-app-header {
+.app-header {
   width: 100%;
   background-color: rgba(255, 255, 255);
   display: flex;
@@ -83,12 +83,15 @@ h1 {
 .input-container button:focus {
   color: rgb(66, 33, 79);
 }
+.input-container button:active {
+  color: rgb(189, 27, 253);
+}
 
 input:focus {
   outline: none;
 }
 
-.message-container {
+.messages-container {
   padding: 30px;
   overflow-y: scroll;
 }
