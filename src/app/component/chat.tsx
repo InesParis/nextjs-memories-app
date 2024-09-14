@@ -32,7 +32,7 @@ const Chat = () => {
     <>
       <div className="messages-container">
         {messages.map((message, index) => (
-          <Message key={index} message={message} />
+          <Message key={index} message={message ? message : "No message"} />
         ))}
       </div>
       <div className="input-container">

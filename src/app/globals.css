@@ -7,8 +7,8 @@ body {
   width: 100vh;
   background: linear-gradient(
     148deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(140, 69, 167, 1) 100%
+    rgb(255, 255, 255, 1) 0%,
+    rgb(140, 69, 167, 1) 100%
   );
   display: flex;
   justify-content: center;
@@ -18,12 +18,14 @@ body {
 .app {
   background-color: rgb(244, 244, 244);
   border-radius: 40px;
-  border: solid 10px (rgb(255, 255, 255, 0.183));
+  border: solid 10px rgba(255, 255, 255, 0.183);
   width: 600px;
   height: 600px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  background-clip: padding-box;
 }
 
 .app-header {
@@ -31,7 +33,7 @@ body {
   background-color: rgba(255, 255, 255);
   display: flex;
   padding: 20px;
-  border-bottom: 1px solid rgba(191, 191, 191);
+  border-bottom: 1px solid rgb(191, 191, 191);
 }
 h1,
 p {
@@ -41,6 +43,9 @@ p {
 
 h1 {
   font-size: 23px;
+}
+p {
+  color: rgba(145, 145, 145);
 }
 
 .profile-picture {
